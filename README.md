@@ -37,12 +37,15 @@ I'm currently not using any assets
 ## Architecture overview
 The `Assets` is the main folder of the project when you can find the `Assets`, `Animations`, `Scripts`, `Soundtrack` and `Scenes`. 
 
+``` bash
 Assets 
 |__ Animations
 |__ Assets
 |__ Scenes 
 |__ Scrips
 |__ Soundtrack
+
+```
 
 ## Git Guideline
 Create your branches and commits using the English language and following this guideline.
