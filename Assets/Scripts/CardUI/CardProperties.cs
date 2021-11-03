@@ -1,20 +1,18 @@
 using UnityEngine; 
+using System;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace CardUI {
   public class CardProperties
   {
-    public string PrintText(string Text)
-    { 
-      Debug.Log(Text);
-
-      return "Card Text";
-    }
-
-    public int PrintNumber(int Number)
-    {
-      Debug.Log(Number);
-
-      return 1;
-    }
+    #region Variables 
+    public int id { get; set; }
+    public int value { get; set; }
+    public string Type { get; set; }
+    public float PositionX { get; set; }
+    public float PositionY { get; set; }
+    public bool CardIsFlipped { get; set; }
+    #endregion
   }
 }

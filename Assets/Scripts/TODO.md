@@ -16,3 +16,14 @@
 > Tentar usar a UnityEngine.UI 
 
 - [ ] Quando todos os CardIsFlipped são verdadeiros o jogo acaba 
+
+
+## Card UI 
+
++ id 
++ value
++ Type
++ PositionX
++ PositionY
++ Sprite
++ CardIdFlipped

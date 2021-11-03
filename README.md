@@ -35,15 +35,15 @@ I'm currently not using any assets
 
 
 ## Architecture overview
-The `Assets` is the main folder of the project when you can find the `Assets`, `Animations`, `Scripts`, `Soundtrack` and `Scenes`. 
+The `Assets` is the main folder of the project when you can find the `Sprites`, `Animations`, `Scripts`, `Soundtrack` and `Scenes`. 
 
 ``` bash
 Assets 
 |__ Animations
-|__ Assets
 |__ Scenes 
 |__ Scrips
 |__ Soundtrack
+|__ Sprites
 
 ```
 
