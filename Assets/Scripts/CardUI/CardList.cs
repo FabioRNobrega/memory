@@ -15,6 +15,7 @@ namespace CardUI {
              Debug.Log(card.value);
         }
     }
+    
     public bool addCard (
       int id,
       int value,
