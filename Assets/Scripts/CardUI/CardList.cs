@@ -12,10 +12,16 @@ namespace CardUI {
     {
         foreach(CardProperties card in cardList)
         {
-             Debug.Log(card.value);
+             Debug.Log( "Card Id: " + card.id + " Card Value: " + card.value);
         }
     }
-    
+    public string PrintText(string Text)
+    { 
+      Debug.Log(Text);
+
+      return Text;
+    }
+
     public bool addCard (
       int id,
       int value,
