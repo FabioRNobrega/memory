@@ -8,10 +8,16 @@ namespace CardUI
   {
     #region Variables
     public CardList cardBehaviorList;
+    private SpriteRenderer cardBody;
+    private Animator cardAnimator;
+    Vector2 movement;    
 
     #endregion
     void Start(){
+      
       cardBehaviorList = new CardList();
+      this.cardAnimator = this.GetComponent<Animator>();
+      this.cardBody = this.GetComponent<SpriteRenderer>();
     
       for (int i = 0; i < 9; i++) 
       {
@@ -19,6 +25,16 @@ namespace CardUI
       } 
 
       cardBehaviorList.ShowCardList(cardBehaviorList.cards);
+    }
+
+     void FixedUpdate() 
+    {
+
+      // cardAnimator.SetFloat("side", Mathf.Abs(movement.x));
+
+      if(Input.GetKeyUp(KeyCode.Escape)) {
+        Application.Quit();
+      }
     }
   }
 }
