@@ -21,19 +21,11 @@ namespace CardUI
       cardBehaviorList = new CardList();
       this.cardAnimator = this.GetComponent<Animator>();
       this.cardBody = this.GetComponent<SpriteRenderer>();
-    
-      for (int i = 0; i < 9; i++) 
-      {
-        cardBehaviorList.addCard((i+1), (10 * i+1), "Type", (i * 100),(i * 100),false);
-      } 
-
-      cardBehaviorList.ShowCardList(cardBehaviorList.cards);
     }
 
      void FixedUpdate() 
     { 
       foreach(CardProperties  card in cardBehaviorList.cards ) {
-        Debug.Log(card);
         if (Input.GetKeyDown($"[{card.id}]"))
           {
             if(flip) 
