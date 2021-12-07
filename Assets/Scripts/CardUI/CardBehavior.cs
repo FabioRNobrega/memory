@@ -10,7 +10,10 @@ namespace CardUI
     public CardList cardBehaviorList;
     private SpriteRenderer cardBody;
     private Animator cardAnimator;
-    Vector2 movement;    
+
+    public bool flip = false;
+
+    public Transform prefab;
 
     #endregion
     void Start(){
@@ -28,13 +31,27 @@ namespace CardUI
     }
 
      void FixedUpdate() 
-    {
-
-      // cardAnimator.SetFloat("side", Mathf.Abs(movement.x));
-
-      if(Input.GetKeyUp(KeyCode.Escape)) {
-        Application.Quit();
+    { 
+      foreach(CardProperties  card in cardBehaviorList.cards ) {
+        Debug.Log(card);
+        if (Input.GetKeyDown($"[{card.id}]"))
+          {
+            if(flip) 
+            {
+              cardAnimator.SetFloat("side", 1);
+              flip = !flip;
+              return;
+            } 
+            cardAnimator.SetFloat("side", 0);          
+            flip = !flip;
+          }
       }
+
+      
+      if(Input.GetKeyUp(KeyCode.Escape)) 
+        {
+          Application.Quit();
+        }
     }
   }
 }

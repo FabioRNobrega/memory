@@ -12,7 +12,7 @@ namespace CardUI {
     {
         foreach(CardProperties card in cardList)
         {
-             Debug.Log( "Card Id: " + card.id + " Card Value: " + card.value);
+          Debug.Log("Card cardIsFlipped: " + card.CardIsFlipped);
         }
     }
     public string PrintText(string Text)
