@@ -16,34 +16,21 @@ namespace CardUI
     public Transform prefab;
 
     #endregion
+
+
     void Start(){
-      
-      cardBehaviorList = new CardList();
       this.cardAnimator = this.GetComponent<Animator>();
-      this.cardBody = this.GetComponent<SpriteRenderer>();
     }
 
-     void FixedUpdate() 
-    { 
-      foreach(CardProperties  card in cardBehaviorList.cards ) {
-        if (Input.GetKeyDown($"[{card.id}]"))
-          {
-            if(flip) 
-            {
-              cardAnimator.SetFloat("side", 1);
-              flip = !flip;
-              return;
-            } 
-            cardAnimator.SetFloat("side", 0);          
-            flip = !flip;
-          }
-      }
-
-      
-      if(Input.GetKeyUp(KeyCode.Escape)) 
-        {
-          Application.Quit();
+    public void flipCard(string keyValue) {
+      if (Input.GetKeyDown($"[{keyValue}]"))
+      {
+        if(cardAnimator.GetFloat("side") == 1) {        
+          cardAnimator.SetFloat("side", 0);          
+        } else {
+          cardAnimator.SetFloat("side", 1);
         }
+      }
     }
   }
 }

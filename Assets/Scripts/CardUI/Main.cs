@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Text.RegularExpressions;
 
 namespace CardUI
 {
@@ -8,6 +9,7 @@ namespace CardUI
   {
     #region Variables
     public CardList cardBehaviorList;
+    public CardBehavior cardBehaviorClass;
 
     public GameObject prefab; 
     public GameObject clone; 
@@ -17,9 +19,6 @@ namespace CardUI
     #endregion
     void Start(){      
       cardBehaviorList = new CardList();
-
-
-
 
       for (int i = 0; i < 9; i++) 
       {
@@ -31,7 +30,19 @@ namespace CardUI
       cardBehaviorList.ShowCardList(cardBehaviorList.cards);
     }
 
-      void FixedUpdate() 
+    void OnGUI()
+    {
+        Event e = Event.current;
+        if (e.isKey)
+        {
+          string cardNumber = Regex.Replace($"{e.keyCode}", "[^0-9]", "");
+          clone = GameObject.FindWithTag(cardNumber);
+          cardBehaviorClass = clone.GetComponent<CardBehavior>();
+          cardBehaviorClass.flipCard($"{cardNumber}");
+        }
+    }
+
+    void FixedUpdate() 
     {       
       if(Input.GetKeyUp(KeyCode.Escape)) 
         {
