@@ -25,6 +25,7 @@ namespace CardUI
         cardBehaviorList.addCard((i+1), (10 * i+1), "Type", (i * 100),(i * 100),false);
         clone = Instantiate(prefab, positions[i], Quaternion.identity);
         clone.tag = $"{i+1}";
+        clone.name = $"{i+i}";
       } 
 
       cardBehaviorList.ShowCardList(cardBehaviorList.cards);
